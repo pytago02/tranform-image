@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ảnh đã xử lý</title>
+    <!-- Thêm liên kết đến Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        h2 {
+            font-size: 15px;
+        }
+        .img-thumbnail {
+            max-height: 300px; /* Tăng chiều cao tối đa cho ảnh */
+            width: auto; /* Giữ tỷ lệ khung hình */
+        }
+        .text-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%; /* Đảm bảo cột có chiều cao đồng đều */
+        }
+        .row {
+            margin-bottom: 20px; /* Thêm khoảng cách giữa các hàng */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Ảnh đã xử lý</h1>
+
+        <div class="row mt-4">
+            <div class="col-md-2 text-center">
+                <h2>Phác thảo:</h2>
+                <img src="{{ url_for('static', filename='output/sketch_' + filename) }}" alt="Sketch" class="img-thumbnail rounded mb-3">
+            </div>
+
+            <div class="col-md-2 text-center">
+                <h2>Sơn dầu:</h2>
+                <img src="{{ url_for('static', filename='output/oil_' + filename) }}" alt="Oil Painting" class="img-thumbnail rounded mb-3">
+            </div>
+
+            <div class="col-md-2 text-center">
+                <h2>Làm mờ:</h2>
+                <img src="{{ url_for('static', filename='output/blurred_' + filename) }}" alt="Blurred" class="img-thumbnail rounded mb-3">
+            </div>
+
+            <div class="col-md-2 text-center">
+                <h2>Tranh ghép (Mosaic):</h2>
+                <img src="{{ url_for('static', filename='output/mosaic_' + filename) }}" alt="Mosaic" class="img-thumbnail rounded mb-3">
+            </div>
+
+            <div class="col-md-2 text-center">
+                <h2>Chuyển đổi màu sắc:</h2>
+                <img src="{{ url_for('static', filename='output/color_' + filename) }}" alt="Color Transformation" class="img-thumbnail rounded mb-3">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-2 text-center">
+                <h2>Đen Trắng:</h2>
+                <img src="{{ url_for('static', filename='output/bw_' + filename) }}" alt="Black and White" class="img-thumbnail rounded mb-3">
+            </div>
+
+            <div class="col-md-2 text-center">
+                <h2>Nhấn Mạnh:</h2>
+                <img src="{{ url_for('static', filename='output/sharpened_' + filename) }}" alt="Sharpened" class="img-thumbnail rounded mb-3">
+            </div>
+
+            <div class="col-md-2 text-center">
+                <h2>Hình Bóng:</h2>
+                <img src="{{ url_for('static', filename='output/vignette_' + filename) }}" alt="Vignette" class="img-thumbnail rounded mb-3">
+            </div>
+
+            <div class="col-md-2 text-center">
+                <h2>Lật:</h2>
+                <img src="{{ url_for('static', filename='output/flipped_' + filename) }}" alt="Flipped" class="img-thumbnail rounded mb-3">
+            </div>
+
+            <div class="col-md-2 text-center">
+                <h2>Nhòe Đường Viền:</h2>
+                <img src="{{ url_for('static', filename='output/edge_blurred_' + filename) }}" alt="Edge Blurred" class="img-thumbnail rounded mb-3">
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Quay lại</a>
+        </div>
+    </div>
+
+    <!-- Thêm liên kết đến Bootstrap JS (tùy chọn) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
